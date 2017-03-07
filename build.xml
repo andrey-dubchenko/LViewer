@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<project name="LViewer" default="build" basedir=".">
+
+    <property name="dpr.name" value="LVIewer.dpr" />
+    
+    <property name="build.dir" value="../EXE" />
+    <property name="build.dcu.dir" value="${basedir}/dcu" />
+    
+    <target name="init">
+    </target>
+
+    <target name="build" depends="init">
+        <exec executable="dcc32.exe" dir="${basedir}">
+        <arg line="-Q -B -W -U${unit.dir} -N${build.dcu.dir} -E${build.dir} ${dpr.name}" />
+    </exec>
+    </target>
+
+    <target name="run" depends="build">
+        <exec executable="${build.dir}/LViewer.exe">
+        </exec>
+    </target>
+    
+</project>

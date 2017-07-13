@@ -39,7 +39,7 @@ var
 begin
  with Nim do
   begin
-   cbSize := sizeof(Nim);
+   cbSize := Nim.SizeOf;
    Wnd := hWindow;
    hIcon := Icon;
    uID := ID;
